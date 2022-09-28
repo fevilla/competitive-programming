@@ -1,23 +1,36 @@
 #include <bits/stdc++.h>
 
 #define f(i, a, b) for (int i = a; i < b; i++)
+
 using namespace std;
 
 int main()
 {
-  int cases, a, b;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
 
-  scanf("%d", &cases);
+  int prior[10];
 
-  f(i, 0, cases)
+  string urls[10];
+
+  int cases, ans;
+
+  cin >> cases;
+  f(j, 0, cases)
   {
-    scanf("%d %d", &a, &b);
-    if (a < b)
-      cout << "<\n";
-    else if (a > b)
-      cout << ">\n";
-    else
-      cout << "=\n";
+    ans = 0;
+    f(i, 0, 10)
+    {
+      cin >> urls[i] >> prior[i];
+      ans = max(ans, prior[i]);
+    }
+
+    cout << "Case #" << j + 1 << ":\n";
+    f(i, 0, 10)
+    {
+      if (prior[i] == ans)
+        cout << urls[i] << "\n";
+    }
   }
 
   return 0;

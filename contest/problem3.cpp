@@ -1,52 +1,32 @@
 #include <bits/stdc++.h>
-#define P 1000005
 
+#define ll long long
 using namespace std;
-
-bool cd[P];
 
 int main()
 {
-
-  int N, M, x, cant;
-  set<int> fab, carl;
-
+  cin.tie(0);
+  ios_base::sync_with_stdio(0);
+  ll N, M, x, ans;
+  set<ll> CD;
   while (cin >> N >> M, N, M)
   {
     for (int i = 0; i < N; i++)
     {
       cin >> x;
-      fab.insert(x);
+      CD.insert(x);
     }
 
+    ans = 0;
     for (int i = 0; i < M; i++)
     {
       cin >> x;
-      carl.insert(x);
+      if (CD.find(x) != CD.end())
+        ans++;
     }
-
-    int ans = 0;
-    if (carl.size() < fab.size())
-    {
-      for (auto it : carl)
-      {
-        if (fab.find(it) != fab.end())
-          ans++;
-      }
-    }
-    else
-    {
-      for (auto it : fab)
-      {
-        if (carl.find(it) != carl.end())
-          ans++;
-      }
-    }
-
-    carl.clear();
-    fab.clear();
 
     cout << ans << endl;
+    CD.clear();
   }
   return 0;
 }

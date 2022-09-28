@@ -36,6 +36,6 @@ int main()
         (!memor[p]) ? R(&x) : L(&x);
       }
     }
-    printf("%d \n", x);
+    printf("%d\n", x);
   }
 }
