@@ -22,7 +22,6 @@
     "**/.vscode/**"
   ],
   "files.associations": {
-    "iostream": "cpp",
-    "iosfwd": "cpp"
+    "iostream": "cpp"
   }
 }
